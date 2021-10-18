@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.AbstractFactory", "DesignPatterns.AbstractFactory\DesignPatterns.AbstractFactory.csproj", "{24E0018E-5E7B-48F9-98A5-BC1C8C651322}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.AbstractFactory", "DesignPatterns.AbstractFactory\DesignPatterns.AbstractFactory.csproj", "{24E0018E-5E7B-48F9-98A5-BC1C8C651322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Specification", "DesignPatterns.Specification\DesignPatterns.Specification.csproj", "{4595B753-E95D-4198-901D-4675DF936449}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +17,15 @@ Global
 		{24E0018E-5E7B-48F9-98A5-BC1C8C651322}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24E0018E-5E7B-48F9-98A5-BC1C8C651322}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24E0018E-5E7B-48F9-98A5-BC1C8C651322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4595B753-E95D-4198-901D-4675DF936449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4595B753-E95D-4198-901D-4675DF936449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4595B753-E95D-4198-901D-4675DF936449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4595B753-E95D-4198-901D-4675DF936449}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {030A7B06-BAA6-40DB-92ED-54FC5F8F4C47}
 	EndGlobalSection
 EndGlobal
