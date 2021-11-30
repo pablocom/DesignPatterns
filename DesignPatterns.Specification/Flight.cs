@@ -33,7 +33,7 @@ namespace DesignPatterns.Specification
             foreach (var invariantRule in _invariantRules)
             {
                 if (!invariantRule.IsSatisfiedBy(this))
-                    throw new Exception("Invariant for Flight is not satisfied");
+                    throw new Exception($"{invariantRule.GetType().Name} invariant for Flight is not satisfied");
             }
         }
     }

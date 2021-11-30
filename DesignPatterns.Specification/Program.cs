@@ -6,7 +6,7 @@ namespace DesignPatterns.Specification
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var flight = new Flight(new DateTime(2021, 1, 1, 3, 4, 5), new DateTime(2021, 1, 1));
         }
     }
 }
