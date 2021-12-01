@@ -1,21 +1,20 @@
-﻿namespace DesignPatterns.Strategy.Models
+﻿namespace DesignPatterns.Strategy.Models;
+
+public class ShippingDetails
 {
-    public class ShippingDetails
+    public string OriginCountry { get; }
+    public string DestinationCountry { get; }
+    public string DestinationState { get; }
+
+    public ShippingDetails(string originCountry, string destinationCountry, string destinationState = "")
     {
-        public string OriginCountry { get; }
-        public string DestinationCountry { get; }
-        public string DestinationState { get; }
+        OriginCountry = originCountry;
+        DestinationCountry = destinationCountry;
+        DestinationState = destinationState;
+    }
 
-        public ShippingDetails(string originCountry, string destinationCountry, string destinationState = "")
-        {
-            OriginCountry = originCountry;
-            DestinationCountry = destinationCountry;
-            DestinationState = destinationState;
-        }
-
-        public bool IsNationalShipment()
-        {
-            return OriginCountry == DestinationCountry;
-        }
+    public bool IsNationalShipment()
+    {
+        return OriginCountry == DestinationCountry;
     }
 }
