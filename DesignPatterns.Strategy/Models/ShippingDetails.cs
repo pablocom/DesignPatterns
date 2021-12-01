@@ -13,7 +13,7 @@ public class ShippingDetails
         DestinationState = destinationState;
     }
 
-    public bool IsNationalShipment()
+    public bool IsNational()
     {
         return OriginCountry == DestinationCountry;
     }

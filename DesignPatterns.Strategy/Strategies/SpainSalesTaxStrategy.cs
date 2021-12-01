@@ -6,7 +6,7 @@ public class SpainSalesTaxStrategy : ISalesTaxStrategy
 {
     public decimal GetTaxFor(Order order)
     {
-        if (order.ShippingDetails.IsNationalShipment())
+        if (order.ShippingDetails.IsNational())
         {
             return order.TotalPrice + 10.5m;
         }
