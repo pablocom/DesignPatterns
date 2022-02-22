@@ -1,29 +1,35 @@
 namespace DesignPatterns.State.PaymentStates;
 
-public class DraftPaymentState : PaymentState
+public sealed class DraftPaymentState : PaymentState
 {
     public override void EnterState(Payment payment)
     {
-        throw new NotImplementedException();
+
     }
 
-    public override void Issue(Payment payment)
+    public override void PayVia(Payment payment, PaymentMethod paymentMethod)
     {
-        throw new NotImplementedException();
+        if (paymentMethod == PaymentMethod.PivotAccount)
+        {
+            payment.TransitionToState(new IssuedPaymentState(DateTime.UtcNow));
+            return;
+        }
+
+        payment.TransitionToState(new PaidPaymentState(DateTime.UtcNow));
     }
 
     public override void Cancel(Payment payment)
     {
-        throw new NotImplementedException();
+        throw new InvalidOperationException("Cannot cancel a payment in Draft state");
     }
 
     public override void PaymentRejected(Payment payment)
     {
-        throw new NotImplementedException();
+        throw new InvalidOperationException("Cannot reject a payment in Draft state");
     }
 
-    public override void MarkAsPaid(Payment payment, DateTime executedAt)
+    public override void MarkAsPaid(Payment payment, DateTime executionDate)
     {
-        throw new NotImplementedException();
+        payment.TransitionToState(new PaidPaymentState(executionDate));
     }
 }

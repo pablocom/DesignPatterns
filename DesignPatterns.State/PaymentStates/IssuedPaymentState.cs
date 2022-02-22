@@ -2,19 +2,26 @@ namespace DesignPatterns.State.PaymentStates;
 
 public class IssuedPaymentState : PaymentState
 {
-    public override void EnterState(Payment payment)
+    private readonly DateTime issuedDate;
+
+    public IssuedPaymentState(DateTime issuedDate)
     {
-        throw new NotImplementedException();
+        this.issuedDate = issuedDate;
     }
 
-    public override void Issue(Payment payment)
+    public override void EnterState(Payment payment)
     {
-        throw new NotImplementedException();
+        payment.IssuedDate = this.issuedDate;
+    }
+
+    public override void PayVia(Payment payment, PaymentMethod paymentMethod)
+    {
+        throw new InvalidOperationException("Cannot pay already issued payment");
     }
 
     public override void Cancel(Payment payment)
     {
-        throw new NotImplementedException();
+        payment.TransitionToState(new DraftPaymentState());
     }
 
     public override void PaymentRejected(Payment payment)
@@ -24,6 +31,6 @@ public class IssuedPaymentState : PaymentState
 
     public override void MarkAsPaid(Payment payment, DateTime executedAt)
     {
-        throw new NotImplementedException();
+        payment.TransitionToState(new PaidPaymentState(executedAt));
     }
 }
