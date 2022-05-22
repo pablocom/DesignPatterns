@@ -6,9 +6,9 @@ Captures objects internal state.
 
 ## Structure:
 
-	- Originator: object who's state is being tracked.
-	- Caretaker: External object that interacts with originator. Performs operations on originator
-	- Memento: object that holds the internal state of the originator. Owns the complete state of the originator. Access to it should be encapsulated through Originator.
+- Originator: object who's state is being tracked.
+- Caretaker: External object that interacts with originator. Performs operations on originator
+- Memento: object that holds the internal state of the originator. Owns the complete state of the originator. Access to it should be encapsulated through Originator.
 
 Can be extended to support Redo method by managing and UndoStack and RedoStack separately.
 
