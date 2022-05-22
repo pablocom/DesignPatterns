@@ -11,7 +11,7 @@ public class IssuedPaymentState : PaymentState
 
     public override void EnterState(Payment payment)
     {
-        payment.IssuedDate = this.issuedDate;
+        payment.IssuedDate = issuedDate;
     }
 
     public override void PayVia(Payment payment, PaymentMethod paymentMethod)
@@ -24,7 +24,7 @@ public class IssuedPaymentState : PaymentState
         payment.TransitionToState(new DraftPaymentState());
     }
 
-    public override void PaymentRejected(Payment payment)
+    public override void Reject(Payment payment)
     {
         throw new NotImplementedException();
     }

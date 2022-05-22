@@ -1,14 +1,20 @@
 ﻿using DesignPatterns.State;
 
-var payment = new Payment(
-    "Salaries March 2021", 
-    6969.32m,
-    string.Empty,
-    new DateTime(2021, 1, 3, 0, 0, 0, DateTimeKind.Utc), 
-    new List<string> {"Salaries"}, 
-    Guid.NewGuid());
+Payment BuildPayment()
+{
+    return new Payment(
+        "Salaries March 2021", 
+        6969.32m,
+        "Salaries",
+        DateTime.SpecifyKind(new DateTime(2021, 1, 3), DateTimeKind.Utc), 
+        new List<string> {"IT", "Blabla"}, 
+        Guid.NewGuid());
+}
+
+
+var payment = BuildPayment();
 
 payment.PayWith(PaymentMethod.PivotAccount);
-payment.MarkAsPaid(DateTime.UtcNow);
-
 payment.Cancel();
+payment.MarkAsPaid(DateTime.UtcNow);
+payment.Reject();

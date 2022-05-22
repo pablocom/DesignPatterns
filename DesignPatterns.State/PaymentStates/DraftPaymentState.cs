@@ -23,7 +23,7 @@ public sealed class DraftPaymentState : PaymentState
         throw new InvalidOperationException("Cannot cancel a payment in Draft state");
     }
 
-    public override void PaymentRejected(Payment payment)
+    public override void Reject(Payment payment)
     {
         throw new InvalidOperationException("Cannot reject a payment in Draft state");
     }

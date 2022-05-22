@@ -25,9 +25,9 @@ public class PaidPaymentState : PaymentState
         throw new InvalidOperationException("A paid payment cannot be canceled");
     }
 
-    public override void PaymentRejected(Payment payment)
+    public override void Reject(Payment payment)
     {
-        throw new InvalidOperationException("A paid payment cannot be canceled");
+        throw new InvalidOperationException("A paid payment cannot be rejected");
     }
 
     public override void MarkAsPaid(Payment payment, DateTime executedAt)
