@@ -1,9 +1,8 @@
 ﻿using DesignPatterns.Memento;
 
-var gameHistory = new Stack<HangmanMemento>();
-var game = new HangmanGame();
+var game = new HangmanGameCaretaker();
 
-while (!game.IsWordGuessed())
+while (!game.HasBeenCompleted())
 {
     game.PrintState();
     Console.WriteLine("Enter new guess (A-Z or '-' to undo):");
@@ -11,16 +10,11 @@ while (!game.IsWordGuessed())
     var key = Console.ReadKey().KeyChar;
     Console.WriteLine();
 
-    if (key == '-' && gameHistory.Count > 1)
+    if (key == '-')
     {
-        gameHistory.Pop();
-        game.ResumeFrom(gameHistory.Peek());
+        game.UndoLastPlay();
         continue;
     }
 
-    if (char.IsLetter(key))
-    {
-        game.Guess(char.ToUpper(key));
-        gameHistory.Push(game.CreateMemento());
-    }
+    game.Guess(key);
 }

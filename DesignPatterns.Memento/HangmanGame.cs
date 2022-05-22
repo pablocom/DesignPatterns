@@ -2,62 +2,55 @@
 
 namespace DesignPatterns.Memento;
 
-public class HangmanGame
+internal class HangmanGame
 {
-    public int GuessesLeft { get; private set; } = 6;
-    public List<char> Guesses { get; private set; } = new List<char>();
-
     private readonly string _wordToGuess;
 
-    public HangmanGame()
+    private int guessesLeft = 6;
+    private GuessCollection guesses = new GuessCollection();
+
+    internal HangmanGame(string wordToGuess)
     {
-        _wordToGuess = "BATMAN";
+        _wordToGuess = wordToGuess;
     }
 
-    public void Guess(char guess)
+    internal void Guess(Guess guess)
     {
-        if (Guesses.Contains(guess))
-        {
-            Console.WriteLine("Cannot guess more than one time the same character");
-            return;
-        }
+        if (guessesLeft == 0)
+            throw new Exception("Game lost!");
 
-        Guesses.Add(guess);
+        guesses.Add(guess);
 
-        if (!_wordToGuess.Contains(guess))
-            GuessesLeft--;
+        if (!_wordToGuess.Contains(guess.Letter))
+            guessesLeft--;
     }
 
-    public void ResumeFrom(HangmanMemento memento)
+    internal void ResumeFrom(HangmanMemento memento)
     {
-        GuessesLeft = memento.GuessesLeft;
-        Guesses.Clear();
-        Guesses.AddRange(memento.Guesses);
+        guessesLeft = memento.GuessesLeft;
+        guesses = memento.Guesses.CreateCopy();
     }
 
-    public HangmanMemento CreateMemento() => new HangmanMemento(GuessesLeft, new List<char>(Guesses));
+    internal HangmanMemento CreateMemento() => new HangmanMemento(guessesLeft, guesses.CreateCopy());
 
-    public void PrintState()
+    internal bool IsCompleted()
+    {
+        return guesses.ContainAllLettersIn(_wordToGuess);
+    }
+
+    internal void PrintState()
     {
         var sb = new StringBuilder();
-        foreach(var letter in _wordToGuess)
+        foreach (var letter in _wordToGuess)
         {
-            if (Guesses.Contains(letter))
+            if (guesses.Contains(new Guess(letter)))
                 sb.Append(letter);
             else
-                sb.Append("_");
+                sb.Append('_');
         }
 
         Console.WriteLine(sb.ToString());
-        Console.WriteLine($"Guesses Left: {GuessesLeft}");
-        Console.WriteLine($"Guesses: {string.Join(',', Guesses.OrderBy(x => x))}");
-    }
-
-    public bool IsWordGuessed()
-    {
-        var lettersIsWordOrdered = _wordToGuess.Distinct().OrderBy(x => x);
-        var guessesOrdered = Guesses.OrderBy(x => x);
-
-        return Enumerable.SequenceEqual(lettersIsWordOrdered, guessesOrdered);
+        Console.WriteLine($"Guesses Left: {guessesLeft}");
+        Console.WriteLine($"Guesses: {string.Join(',', guesses.OrderedAlphabetically.Select(x => x.Letter))}");
     }
 }

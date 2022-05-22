@@ -3,9 +3,9 @@
 public sealed class HangmanMemento
 {
     internal int GuessesLeft { get; }
-    internal IEnumerable<char> Guesses { get; }
+    internal GuessCollection Guesses { get; }
 
-    internal HangmanMemento(int guessesLeft, IEnumerable<char> guesses)
+    internal HangmanMemento(int guessesLeft, GuessCollection guesses)
     {
         Guesses = guesses;
         GuessesLeft = guessesLeft;
