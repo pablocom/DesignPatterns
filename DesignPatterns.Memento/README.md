@@ -1,5 +1,7 @@
 ﻿# Memento
 
+Based on (Hangman Kata)[https://github.com/ardalis/kata-catalog/blob/main/katas/Hangman.md]
+
 Good for preserving state of objects. Examples: saving progress in videogames, implementing rollback in graphic applications.
 
 Captures objects internal state.
