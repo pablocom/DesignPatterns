@@ -4,9 +4,10 @@ The purpose of this repository is to hold a collection of design patterns along 
 
 ## Catalog
 - Creational
-	- [Abstract factory](#abstract-factory)
+	- [Abstract factory](DesignPatterns.AbstractFactory)
 - Structural
-	- [Specification](#specification)
+	- [Specification](DesignPatterns.Specification)
 - Behavioral
-	- [State](#state)
-	- [Strategy](#strategy)
+    - [State](DesignPatterns.State)
+    - [Strategy](DesignPatterns.Strategy)
+    - [Memento](DesignPatterns.Memento)
