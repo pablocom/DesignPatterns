@@ -23,7 +23,7 @@ internal class GuessCollection
 
     internal bool Contains(Guess guess) => _guesses.Contains(guess);
 
-    internal bool ContainAllLettersIn(string wordToGuess)
+    internal bool ContainsAllLettersIn(string wordToGuess)
     {
         var orderedLettersGuessed = _guesses.OrderBy(x => x).Select(x => x.Letter);
         var orderedDistinctLettersInWord = wordToGuess.Distinct().OrderBy(x => x);

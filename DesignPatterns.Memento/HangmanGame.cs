@@ -35,7 +35,7 @@ internal class HangmanGame
 
     internal bool IsCompleted()
     {
-        return guesses.ContainAllLettersIn(_wordToGuess);
+        return guesses.ContainsAllLettersIn(_wordToGuess);
     }
 
     internal void PrintState()
