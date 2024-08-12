@@ -14,7 +14,7 @@ public class Payment
     public DateTime? IssuedDate { get; internal set; }
     public DateTime? PaidDate { get; internal set; }
 
-    private PaymentState _currentState;
+    private PaymentState _currentState = null!;
 
     public Payment(string title, decimal amount, string category, DateTime dueDate, ICollection<string> label,
         Guid? beneficiaryId)

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.Strategy", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Memento", "DesignPatterns.Memento\DesignPatterns.Memento.csproj", "{46D1D15A-B408-439C-9375-81B816571E6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.ChainOfResponsibility", "DesignPatterns.ChainOfResponsibility\DesignPatterns.ChainOfResponsibility.csproj", "{C0034B27-83ED-4340-B142-CA49C15FFDBE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{46D1D15A-B408-439C-9375-81B816571E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46D1D15A-B408-439C-9375-81B816571E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46D1D15A-B408-439C-9375-81B816571E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0034B27-83ED-4340-B142-CA49C15FFDBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0034B27-83ED-4340-B142-CA49C15FFDBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0034B27-83ED-4340-B142-CA49C15FFDBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0034B27-83ED-4340-B142-CA49C15FFDBE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
