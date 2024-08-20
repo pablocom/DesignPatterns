@@ -1,6 +1,6 @@
 namespace DesignPatterns.AbstractFactory
 {
-    public class MacFactory : IUIFactory
+    public class MacFactory : IUiFactory
     {
         public IButton CreateButton()
         {

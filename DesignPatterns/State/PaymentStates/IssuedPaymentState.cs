@@ -2,16 +2,16 @@ namespace DesignPatterns.State.PaymentStates;
 
 public class IssuedPaymentState : PaymentState
 {
-    private readonly DateTime issuedDate;
+    private readonly DateTime _issuedDate;
 
     public IssuedPaymentState(DateTime issuedDate)
     {
-        this.issuedDate = issuedDate;
+        this._issuedDate = issuedDate;
     }
 
     public override void EnterState(Payment payment)
     {
-        payment.IssuedDate = issuedDate;
+        payment.IssuedDate = _issuedDate;
     }
 
     public override void PayVia(Payment payment, PaymentMethod paymentMethod)

@@ -1,6 +1,6 @@
 namespace DesignPatterns.AbstractFactory
 {
-    public class WindowsFactory : IUIFactory
+    public class WindowsFactory : IUiFactory
     {
         public IButton CreateButton()
         {

@@ -2,16 +2,16 @@ namespace DesignPatterns.State.PaymentStates;
 
 public class PaidPaymentState : PaymentState
 {
-    private readonly DateTime datePaid;
+    private readonly DateTime _datePaid;
 
     public PaidPaymentState(DateTime datePaid)
     {
-        this.datePaid = datePaid;
+        this._datePaid = datePaid;
     }
 
     public override void EnterState(Payment payment)
     {
-        payment.PaidDate = datePaid;
+        payment.PaidDate = _datePaid;
         // Example: raise domain event to send an email notification
     }
 

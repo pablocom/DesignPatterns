@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.Strategy.Strategies;
 
-public class USASalesTaxStrategy : ISalesTaxStrategy
+public class UsaSalesTaxStrategy : ISalesTaxStrategy
 {
     public decimal GetTaxFor(Order order)
     {
