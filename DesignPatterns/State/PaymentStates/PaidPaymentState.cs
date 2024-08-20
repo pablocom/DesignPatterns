@@ -6,7 +6,7 @@ public class PaidPaymentState : PaymentState
 
     public PaidPaymentState(DateTime datePaid)
     {
-        this._datePaid = datePaid;
+        _datePaid = datePaid;
     }
 
     public override void EnterState(Payment payment)

@@ -6,7 +6,7 @@ public class Application
 
     public Application(IUiFactory uiFactory)
     {
-        this._uiFactory = uiFactory;
+        _uiFactory = uiFactory;
     }
 
     public void BuildUserInterface()
